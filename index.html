@@ -45,8 +45,17 @@
     <!-- End Single Page Apps for GitHub Pages -->
     <script>
         var pathName = window.location.pathname;
-        if (pathName == "/" || pathName == "/shorterurl" || pathName == "/shorterurl/") {} else {
+        console.log("pathName: " + pathName);
+        console.log("pathName compare 1 : " + (pathName == "/"));
+        console.log("pathName compare 2 : " + (pathName == "/shorterurl"));
+        console.log("pathName compare 3 : " + (pathName == "/shorterurl/"));
+        console.log("pathName compare 4 : " + (pathName == "/" || pathName == "/shorterurl" || pathName == "/shorterurl/"));
+        if (pathName == "/" || pathName == "/shorterurl" || pathName == "/shorterurl/") {
+            console.log("vao day 1");
+        } else {
+            console.log("vao day 2");
             pathInfo = pathName.replace("/","");
+            console.log("pathInfo: " + pathInfo);
             var newURL = "https://script.google.com/macros/s/AKfycbxgRm9r4uuthDIG5EDuErk-SoUlEV5BZYo94YudZ9zMaLn-4dcfsCCExNIwQ1jBEiJk/exec?" + pathInfo;
             window.open(newURL, '_top');
         }
